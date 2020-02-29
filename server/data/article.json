@@ -1,0 +1,19 @@
+{
+  "model": "Article",
+  "data": [
+    {
+      "title": "一个简单的观察者模式实现",
+      "desc": "观察者模式是一种对象行为模式。它定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。",
+      "content": "<pre class=\"ql-syntax\" spellcheck=\"false\">function Observer() {\n this.listeners = {};\n}\nObserver.prototype = {\n  on: function (type, handle) {\n    if (!this.listeners[type]) this.listeners[type] = [];\n    this.listeners[type].push(handle)\n  },\n  emit: function () {\n    const type = Array.prototype.shift.call(arguments);\n    const handles = this.listeners[type];\n    if (!handles) return false;\n    handles.forEach(v =&gt; {\n      v.apply(this, arguments)\n    })\n  },\n  off: function (type, handle) {\n    if (!this.listeners[type]) return false;\n    this.listeners[type].forEach((v, i) =&gt; {\n      if (v === handle) {\n        this.listeners[type].splice(i, 1)\n      }\n    })\n  }\n}\n\n\nconst Observe = new Observer();\nconst fn1 = function (key) {\n  console.log(key + '第一个click监听函数')\n}\nconst fn2 =  function (key) {\n  console.log(key + '第二个click监听函数')\n}\n\nObserve.on('click', fn1)\nObserve.emit('click', '1')\nconsole.log('----------------------')\n\nObserve.on('click', fn2)\nObserve.emit('click', '2');\nconsole.log('----------------------')\n\nObserve.off('click', fn1)\nObserve.emit('click', '3');\n\nconsole.log(Observe.listeners)\n\n\n//输出结果为\n\n\n// 1第一个click监听函数\n// ----------------------\n// 2第一个click监听函数\n// 2第二个click监听函数\n// ----------------------\n// 3第二个click监听函数\n// { click: [ [Function: fn2] ] }\n</pre>",
+      "imgName": "",
+      "imgSrc": ""
+    },
+    {
+      "title": "深度优先遍历（BFS）与广度优先遍历（DFS）",
+      "desc": "深度优先遍历（BFS）与广度优先遍历（DFS）",
+      "content": "<pre class=\"ql-syntax\" spellcheck=\"false\">&lt;!DOCTYPE html&gt;\n&lt;html lang=\",en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;点滴 » RedSpite个人学习小站&lt;/title&gt;\n&lt;/head&gt;\n\n&lt;body&gt;\n  &lt;div id=\"root\"&gt;\n    &lt;h1&gt; 我是h1 &lt;/h1&gt;\n    &lt;div&gt;\n      &lt;span&gt; 我是div - span &lt;/span&gt;\n      &lt;b&gt; 我是div - b &lt;/b&gt;\n    &lt;/div&gt;\n    &lt;a&gt; 我是a &lt;/a&gt;\n  &lt;/div&gt;\n  &lt;script&gt;\n    // 深度递归\n    function deepDG(node, nodeList = []) {\n      if (!node) return;\n      nodeList.push(node)\n      for (let i = 0; i &lt; node.children.length; i++) {\n        const item = node.children[i];\n        deepDG(item, nodeList)\n      }\n      return nodeList\n    }\n    // 深度优先\n    function getDeepNodeList(node, nodeList=[]) {\n      if (!node) return;\n      let stack = [node];\n      while (stack.length &gt; 0) {\n        const item = stack.pop();\n        nodeList.push(item)\n        const { children } = item;\n        for (let i = children.length - 1; i &gt;= 0; i--)\n          stack.push(children[i])\n      }\n      return nodeList\n    }\n    // 广度优先\n    function getWildNodeList(node, nodeList = []) {\n      if (!node) return;\n      let queue = [node];\n      while (queue.length &gt; 0) {\n        const item = queue.shift();\n        nodeList.push(item);\n        const { children } = item;\n        for (let i = 0; i &lt; children.length; i++)\n          queue.push(children[i])\n      }\n      return nodeList;\n    }\n    const node = document.getElementsByTagName('html')[0];\n    const nodeList1 = getDeepNodeList(node);\n    const nodeList2 = deepDG(node);\n    const nodeList3 = getWildNodeList(node);\n\n    console.log(nodeList1, nodeList2, nodeList3)\n  &lt;/script&gt;\n&lt;/body&gt;\n\n&lt;/html&gt;\n</pre><p><br></p>",
+      "imgName": "图片1",
+      "imgSrc": "/images/1559707435282.jpg"
+    }
+  ]
+}

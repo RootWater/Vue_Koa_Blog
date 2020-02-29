@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  outputDir: 'mySite1',
+  outputDir: './server/public',
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'less',
