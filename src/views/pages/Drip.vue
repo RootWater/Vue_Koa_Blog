@@ -1,5 +1,6 @@
 <template>
   <div class="drip">
+    <music class="no-print"></music>
     <div class="artical-box">
       <template v-for="article in articleList.data">
         <Article :key="article.id"
@@ -15,12 +16,14 @@
 <script>
   import Article from '@/views/pages/components/Article'
   import LoadMore from '@/components/loadMore/LoadMore'
+  import Music from '@/components/music/Music'
 
   export default {
     name: 'Drip',
     components: {
       LoadMore,
-      Article
+      Article,
+      Music
     },
     data () {
       return {

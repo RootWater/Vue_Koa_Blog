@@ -43,6 +43,10 @@
         </i-col>
         <i-col span="24"
                class="m-b-20">
+          ● 能独立封装高质量组件，抽离重复代码进行高度封装
+        </i-col>
+        <i-col span="24"
+               class="m-b-20">
           ● 熟练掌握 CSS3 ES6 webpack 模块化 组件化开发 ...
         </i-col>
         <i-col span="24"
@@ -51,27 +55,32 @@
         </i-col>
         <i-col span="24"
                class="m-b-20">
-          ● 可以写点NodeJs
+          ● 熟悉使用 Nodejs 开发服务器
         </i-col>
         <i-col span="24"
                class="m-b-20">
           ● 具有良好的编码规范与业务沟通能力
         </i-col>
         <i-col span="24">
-          ● 独立解决问题、细节掌握、工作负责、自主补充知识
+          ● 独立解决问题、细节掌握、工作负责、乐于分享、善于沟通
         </i-col>
       </Section>
       <Section title="开源项目">
         <i-col span="24"
                class="m-b-20">
-          ● <span style="color: red;">待填</span>
+          ● <span>Vue + Koa + Mysql 制作个人博客</span>
         </i-col>
         <i-col span="24"
                class="m-b-20">
-          ● <span style="color: red;">待填</span>
+          ● <span>Koa 后端工程模板搭建</span>
         </i-col>
-        <i-col span="24">
-          ● <span style="color: red;">待填</span>
+        <i-col span="24"
+               class="m-b-20">
+          ● <span>html5 静态页面制作</span>
+        </i-col>
+        <i-col span="24"
+               class="m-b-20">
+          ● <span>Canvas 制作粒子特效</span>
         </i-col>
       </Section>
       <Section title="工作经历">
@@ -84,7 +93,7 @@
           企业管理系统
         </i-col>
         <i-col span="24">
-          负责公司 MES 系统 PC\移动端 开发。根据业务需求构建页面框架，利用 Vue\ES6\CSS3 书写前端页面，处理业务逻辑并进行数据展示，让用户操作更便捷，更高效。
+          负责公司 MES WMS 系统 PC\移动端 开发。根据业务需求构建页面框架，利用 Vue\ES6\CSS3 书写前端页面，处理业务逻辑并进行数据展示，让用户操作更便捷，更高效。
         </i-col>
       </Section>
     </Card>

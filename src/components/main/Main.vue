@@ -9,7 +9,6 @@
       <transition name="fadein-go-top">
         <go-top class="no-print"></go-top>
       </transition>
-      <music class="no-print"></music>
       <router-view v-if="noCache"></router-view>
       <keep-alive v-else>
         <router-view/>
@@ -26,13 +25,11 @@
   import TextShow from '@/components/main/TextShow'
   import MenuList from '@/components/main/MenuList'
   import GoTop from '@/components/goTop'
-  import Music from '@/components/music'
   import { ss } from '@/libs/tools'
 
   export default {
     name: 'Main',
     components: {
-      Music,
       GoTop,
       MenuList,
       TextShow,
